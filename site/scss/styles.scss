@@ -1,1 +1,32 @@
-body{}
+// @import "normalize";
+// @import "bourbon/bourbon";
+// @import "neat/neat";
+@import "base/base";
+// @import "components/*";
+// @import "patterns/*";
+
+$tablet: 'min-width: 768px';
+$desktop: 'min-width: 1024px';
+
+.container {
+    width: 100%;
+    @media screen and ($tablet) {
+        width: 90%;
+        max-width: 960px;
+        margin: 0 auto;
+    }
+    @media screen and ($desktop) {
+        max-width: 1040px;
+        margin: 0 auto;
+    }
+}
+
+section {
+    width: 100%;
+    @media screen and ($tablet) {
+        width: 50%;
+    }
+    @media screen and ($desktop) {
+        max-width: 25%;
+    }
+}
