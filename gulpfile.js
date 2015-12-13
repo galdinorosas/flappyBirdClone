@@ -24,9 +24,9 @@ gulp.task('jshint', function() {
 });
 
 gulp.task('minify-css', function() {
-  return gulp.src('styles/*.css')
+  return gulp.src('css/*.css')
     .pipe(minifyCss({compatibility: 'ie8'}))
-    .pipe(gulp.dest('build/css/minify'));
+    .pipe(gulp.dest('build/css'));
 });
 
 

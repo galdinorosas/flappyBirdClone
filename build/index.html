@@ -1,1 +1,158 @@
-<!DOCTYPE html><html lang=en><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="ie=edge"><title>Flappy Bird Clone Landing Page</title><meta name=description content="A brief description of your site"><meta name=viewport content="width=device-width, initial-scale=1"></head><body><nav class=topBar><ul class=topBarList><li><a href=#top>Home</a></li><li><a href=#aboutLink>About</a></li><li><a href=#contact>Contact</a></li></ul></nav><a id=top></a><header><h1 class=titleTest>Flappy Bird</h1></header><a id=aboutLink></a><section class=intro><p>A Flappy Bird Clone Just Like The Original</p></section><div class=descriptionContainer><div class=centeredContainer><section class=retro><h2>Retro Game Design</h2><img src=images/flappyBird.jpg alt=birdImage></section><section class=easyToPlay><h2>Super Easy To Play</h2><img src=images/instructionImage.jpg alt=instructionImage></section><section class=addicting><h2>Down Right Addicting</h2><img src=images/addicting.jpg alt=scoreImage></section></div></div><section class=playButton><button type=button>Play Game</button></section><a id=contact></a><footer><div><span class=st_facebook_large displaytext=Facebook></span> <span class=st_twitter_large displaytext=Tweet></span> <span class=st_linkedin_large displaytext=LinkedIn></span> <span class=st_googleplus_large displaytext="Google +"></span> <span class=st_email_large displaytext=Email></span></div></footer><link rel="shortcut icon" href=images/favicon.ico><link rel=apple-touch-icon href=images/apple-touch-icon.png><link rel=stylesheet href=css/normalize.css><link rel=stylesheet href=css/styles.css><script type=text/javascript>var switchTo5x=true;</script><script type=text/javascript src=https://ws.sharethis.com/button/buttons.js></script><script type=text/javascript>stLight.options({publisher: "2f8b17c1-7919-4f95-a4e1-1c78461a8aaa", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script></body></html>
+<!DOCTYPE html><html lang=en><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="ie=edge"><title>Flappy Bird Clone Landing Page</title><meta name=description content="A brief description of your site"><meta name=viewport content="width=device-width, initial-scale=1"><style>
+		@font-face {
+	  font-family: flappyBird;
+	  src: url(../fonts/flappybird.TTF);
+	}
+
+	nav {
+	  width: 100%;
+	  height: 4em;
+	  background-color: #028693;
+	  font-family: flappyBird;
+	  position: fixed;
+	}
+
+	nav .topBarList {
+	  float: right;
+	  margin: 0 1em 0 0;
+	  list-style-type: none;
+	  position: relative;
+	  top: 32%;
+	  font-size: 1.2em;
+	}
+
+	nav .topBarList li {
+	  display: inline;
+	}
+
+	nav .topBarList li a {
+	  text-decoration: none;
+	  color: white;
+	}
+
+	header {
+	  width: 100%;
+	  height: 30em;
+	  background-image: url("../images/backgroundImage.jpg");
+	  background-position-x: -2em;
+	}
+
+	header h1 {
+	  margin: auto;
+	  text-align: center;
+	  line-height: 7em;
+	  font-size: 2.5em;
+	}
+
+	section {
+	  width: 100%;
+	}
+
+	section h2 {
+	  text-align: center;
+	}
+
+	.intro {
+	  height: 5em;
+	  background-color: #F8F300;
+	}
+
+	.intro p {
+	  margin: 0;
+	  text-align: center;
+	  line-height: 5em;
+	}
+
+	img {
+	  width: 17em;
+	  display: block;
+	  margin: 0 auto;
+	}
+
+	.descriptionContainer {
+	  background-color: #DDD894;
+	  height: 55em;
+	  width: 100%;
+	}
+
+	.descriptionContainer .centeredContainer {
+	  background-color: #DDD894;
+	  width: 20em;
+	  height: 55em;
+	  margin: 0 auto;
+	}
+
+	.descriptionContainer .centeredContainer .retro,
+	.descriptionContainer .centeredContainer .easyToPlay,
+	.descriptionContainer .centeredContainer .addicting {
+	  float: left;
+	}
+
+	@media screen and (min-width: 700px) {
+	  header {
+	    background-position-x: -2em;
+	  }
+
+	  .descriptionContainer {
+	    background-color: #DDD894;
+	    height: 37em;
+	    width: 100%;
+	  }
+
+	  .descriptionContainer .centeredContainer {
+	    background-color: #DDD894;
+	    width: 43em;
+	    height: 36em;
+	    margin: 0 auto;
+	  }
+
+	  .descriptionContainer .centeredContainer .retro,
+	  .descriptionContainer .centeredContainer .easyToPlay,
+	  .descriptionContainer .centeredContainer .addicting {
+	    float: left;
+	    width: 21em;
+	  }
+
+	  .descriptionContainer .centeredContainer .addicting {
+	    margin-top: -3.2em;
+	  }
+	}
+
+	@media screen and (min-width: 1000px) {
+	  header {
+	    background-position-x: -2em;
+	  }
+
+	  .descriptionContainer {
+	    background-color: #DDD894;
+	    height: 26em;
+	    width: 100%;
+	  }
+
+	  .descriptionContainer .centeredContainer {
+	    background-color: #DDD894;
+	    width: 63em;
+	    height: 26em;
+	    margin: 0 auto;
+	  }
+
+	  .descriptionContainer .centeredContainer .retro,
+	  .descriptionContainer .centeredContainer .easyToPlay,
+	  .descriptionContainer .centeredContainer .addicting {
+	    float: left;
+	    width: 21em;
+	  }
+
+	  .descriptionContainer .centeredContainer .retro img {
+	    margin-top: 4em;
+	  }
+
+	  .descriptionContainer .centeredContainer .addicting img {
+	    margin-top: 6em;
+	  }
+
+	  .descriptionContainer .centeredContainer .addicting {
+	    margin: 0;
+	  }
+	}
+	</style></head><body><nav class=topBar><ul class=topBarList><li><a href=#top>Home</a></li><li><a href=#aboutLink>About</a></li><li><a href=#contact>Contact</a></li></ul></nav><a id=top></a><header><h1 class=titleTest>Flappy Bird</h1></header><a id=aboutLink></a><section class=intro><p>A Flappy Bird Clone Just Like The Original</p></section><div class=descriptionContainer><div class=centeredContainer><section class=retro><h2>Retro Game Design</h2><img src=images/flappyBird.jpg alt=birdImage></section><section class=easyToPlay><h2>Super Easy To Play</h2><img src=images/instructionImage.jpg alt=instructionImage></section><section class=addicting><h2>Down Right Addicting</h2><img src=images/addicting.jpg alt=scoreImage></section></div></div><section class=playButton><button type=button>Play Game</button></section><a id=contact></a><footer><div><span class=st_facebook_large displaytext=Facebook></span> <span class=st_twitter_large displaytext=Tweet></span> <span class=st_linkedin_large displaytext=LinkedIn></span> <span class=st_googleplus_large displaytext="Google +"></span> <span class=st_email_large displaytext=Email></span></div></footer><link rel="shortcut icon" href=images/favicon.ico><link rel=apple-touch-icon href=images/apple-touch-icon.png><link rel=stylesheet href=css/normalize.css><link rel=stylesheet href=css/styles.css><script type=text/javascript>var switchTo5x=true;</script><script type=text/javascript src=https://ws.sharethis.com/button/buttons.js></script><script type=text/javascript>stLight.options({publisher: "2f8b17c1-7919-4f95-a4e1-1c78461a8aaa", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script></body></html>
