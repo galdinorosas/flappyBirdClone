@@ -13,11 +13,11 @@ var buffer = require('vinyl-buffer');
 var sourcemaps = require('gulp-sourcemaps');
 
 // To run broswer sync (to make browser auto-update the browser to visually see changes instantly)
-// open a new tab in terminal and run this code: browser-sync start --server --files "site/css/*.css,site/index.html" --startPath "site"
+// open a new tab in terminal and run this code: browser-sync start --server --files "css/*.css,index.html"
 
 
 gulp.task('jshint', function() {
-  return gulp.src('site/js/*.js')
+  return gulp.src('js/*.js')
     .pipe(jshint())
     .pipe(jshint.reporter('default'));
 });
@@ -25,30 +25,30 @@ gulp.task('jshint', function() {
 
 // Compile Sass task
 gulp.task('sass', function() {
-  return gulp.src('site/scss/*.scss')
+  return gulp.src('scss/*.scss')
     .pipe(sourcemaps.init())
     .pipe(sass())
     .pipe(sourcemaps.write('.'))
-    .pipe(gulp.dest('site/css'));
+    .pipe(gulp.dest('css'));
 });
 
 // Watch task
 gulp.task('watch', function() {
-  gulp.watch('site/js/*.js', ['jshint']);
-  gulp.watch('site/scss/*.scss', ['sass']);
+  gulp.watch('js/*.js', ['jshint']);
+  gulp.watch('scss/*.scss', ['sass']);
 });
 
 
 
 gulp.task('html', function() {
-  return gulp.src('site/index.html')
+  return gulp.src('index.html')
     .pipe(minifyHTML())
     .pipe(gulp.dest('build/'));
 });
 
 // JavaScript build task, removes whitespace and concatenates all files
 gulp.task('scripts', function() {
-  return browserify('site/js/main.js')
+  return browserify('js/main.js')
     .bundle()
     .pipe(source('app.js'))
     .pipe(buffer())
@@ -58,14 +58,14 @@ gulp.task('scripts', function() {
 
 // Styles build task, concatenates all the files
 gulp.task('styles', function() {
-  return gulp.src('site/css/*.css')
+  return gulp.src('css/*.css')
     .pipe(concat('styles.css'))
     .pipe(gulp.dest('build/css'));
 });
 
 // Image optimization task
 gulp.task('images', function() {
-  return gulp.src('site/img/*')
+  return gulp.src('img/*')
     .pipe(imagemin())
     .pipe(gulp.dest('build/img'));
 });
