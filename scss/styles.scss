@@ -17,7 +17,7 @@ $navColor: #028693;
 @font-face{
 
 	font-family: flappyBird;
-	src: url(../fonts/flappybird.TTF);
+	src: url(fonts/flappybird.TTF);
 }
 
 nav{
@@ -55,7 +55,7 @@ header{
 
 	width: 100%;
     height: 30em;
-    background-image: url("../images/backgroundImage.jpg");
+    background-image: url("images/backgroundImage.jpg");
     background-position-x: -2em;
 	h1{
 	    margin: auto;
