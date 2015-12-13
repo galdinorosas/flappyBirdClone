@@ -11,6 +11,7 @@ var rename = require('gulp-rename');
 var source = require('vinyl-source-stream');
 var buffer = require('vinyl-buffer');
 var sourcemaps = require('gulp-sourcemaps');
+var minifyCss = require('gulp-minify-css');
 
 // To run broswer sync (to make browser auto-update the browser to visually see changes instantly)
 // open a new tab in terminal and run this code: browser-sync start --server --files "css/*.css,index.html"
@@ -20,6 +21,12 @@ gulp.task('jshint', function() {
   return gulp.src('js/*.js')
     .pipe(jshint())
     .pipe(jshint.reporter('default'));
+});
+
+gulp.task('minify-css', function() {
+  return gulp.src('styles/*.css')
+    .pipe(minifyCss({compatibility: 'ie8'}))
+    .pipe(gulp.dest('build/css/minify'));
 });
 
 
@@ -71,7 +78,7 @@ gulp.task('images', function() {
 });
 
 // Build task
-gulp.task('build', ['jshint', 'sass', 'html', 'scripts', 'styles', 'images']);
+gulp.task('build', ['jshint', 'sass', 'html', 'scripts', 'styles', 'images','minify-css']);
 
 // Default task
 gulp.task('default', ['jshint', 'sass', 'watch']);
