@@ -10,6 +10,11 @@ var concat = require('gulp-concat');
 var rename = require('gulp-rename');
 var source = require('vinyl-source-stream');
 var buffer = require('vinyl-buffer');
+var sourcemaps = require('gulp-sourcemaps');
+
+// To run broswer sync (to make browser auto-update the browser to visually see changes instantly)
+// open a new tab in terminal and run this code: browser-sync start --server --files "site/css/*.css,site/index.html" --startPath "site"
+
 
 gulp.task('jshint', function() {
   return gulp.src('site/js/*.js')
@@ -17,10 +22,13 @@ gulp.task('jshint', function() {
     .pipe(jshint.reporter('default'));
 });
 
+
 // Compile Sass task
 gulp.task('sass', function() {
   return gulp.src('site/scss/*.scss')
+    .pipe(sourcemaps.init())
     .pipe(sass())
+    .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest('site/css'));
 });
 
@@ -30,8 +38,7 @@ gulp.task('watch', function() {
   gulp.watch('site/scss/*.scss', ['sass']);
 });
 
-// Default task
-gulp.task('default', ['jshint', 'sass', 'watch']);
+
 
 gulp.task('html', function() {
   return gulp.src('site/index.html')
@@ -66,8 +73,6 @@ gulp.task('images', function() {
 // Build task
 gulp.task('build', ['jshint', 'sass', 'html', 'scripts', 'styles', 'images']);
 
-// gulp.task('sass', function () {
-//   gulp.src('./scss/.scss')
-//     .pipe(sass())
-//     .pipe(gulp.dest('./css'));
-// });
+// Default task
+gulp.task('default', ['jshint', 'sass', 'watch']);
+

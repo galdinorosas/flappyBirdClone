@@ -423,23 +423,7 @@ th {
   padding: 0;
 }
 
-.container {
-  width: 100%; }
-  @media screen and (min-width: 768px) {
-    .container {
-      width: 90%;
-      max-width: 960px;
-      margin: 0 auto; } }
-  @media screen and (min-width: 1024px) {
-    .container {
-      max-width: 1040px;
-      margin: 0 auto; } }
-
-section {
-  width: 100%; }
-  @media screen and (min-width: 768px) {
-    section {
-      width: 50%; } }
-  @media screen and (min-width: 1024px) {
-    section {
-      max-width: 25%; } }
+.topBar {
+  width: 100%;
+  height: 4em;
+  background-color: #028693; }
