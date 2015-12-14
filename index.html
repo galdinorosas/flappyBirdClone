@@ -13,15 +13,20 @@
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" type="text/css" href="css/styles.css">	
 
-		<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-		<script src="http://cdn.jsdelivr.net/velocity/1.2.2/velocity.min.js"></script>
-		<script src="http://cdn.jsdelivr.net/velocity/1.2.2/velocity.ui.min.js"></script>
-        <script type="text/javascript">var switchTo5x=true;</script>
-		<script type="text/javascript" src="https://ws.sharethis.com/button/buttons.js"></script>
-		<script type="text/javascript">stLight.options({publisher: "2f8b17c1-7919-4f95-a4e1-1c78461a8aaa", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script>
-		<script type="text/javascript" src="js/main.js"></script>	
+        <!-- I defered all the scripts since there is really no need to execute any of the scripts since the goal is to not stop html parsing.-->
 
+		<script defer type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+		<script defer src="http://cdn.jsdelivr.net/velocity/1.2.2/velocity.min.js"></script>
+		<script defer src="http://cdn.jsdelivr.net/velocity/1.2.2/velocity.ui.min.js"></script>
+		<script defer type="text/javascript" src="js/main.js"></script>	
 
+		<!-- I am not able to use defer or async with the script tags for shareThis buttons since the consol starts asking for a publisher key, even though I have the key entered right below. -->
+
+		<script  type="text/javascript">var switchTo5x=true;</script>
+		<script  type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+		<script  type="text/javascript">stLight.options({publisher: "2f8b17c1-7919-4f95-a4e1-1c78461a8aaa", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script>
+
+				
 </head>
 	<body>
 
@@ -107,10 +112,12 @@
 		<footer>
 			<div> 
 			
+
 				<span class='st_facebook_large' displayText='Facebook'></span>
 				<span class='st_twitter_large' displayText='Tweet'></span>
 				<span class='st_linkedin_large' displayText='LinkedIn'></span>
 				<span class='st_googleplus_large' displayText='Google +'></span>
+				<span class='st_whatsapp_large' displayText='WhatsApp'></span>
 				<span class='st_email_large' displayText='Email'></span>
 			</div>
 
