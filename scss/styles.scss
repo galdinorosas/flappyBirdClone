@@ -4,221 +4,166 @@
 // @import "base/base";
 // @import "components/*";
 // @import "patterns/*";
-
 $tablet: 'min-width: 768px';
 $desktop: 'min-width: 1024px';
-
 $bColor: #71C5CF;
 $tColor: #DDD894;
 $gColor: #74BF2E;
 $rColor: #EE3605;
 $navColor: #028693;
-
-@font-face{
-
-	font-family: flappyBird;
-	src: url(../fonts/flappybird.TTF);
+@font-face {
+    font-family: flappyBird;
+    src: url(../fonts/flappybird.TTF);
 }
 
-nav{
-
-	width: 100%;
-	height: 4em;
-	background-color: $navColor;
-	font-family: flappyBird;
-	position: fixed;
-	z-index: 1000;
-
-	.topBarList{
-		float: right;
-	    margin: 0 1em 0 0;
-	    list-style-type: none;
-	    position: relative;
-	    top: 32%;
-	    font-size: 1.2em;
-
-		li{
-
-			display: inline;
-		}
-
-		 li a{
-			text-decoration: none;
-			color: white;
-		 }
-		
-
-	}
-
+nav {
+    width: 100%;
+    height: 4em;
+    background-color: $navColor;
+    font-family: flappyBird;
+    position: fixed;
+    z-index: 1000;
+    .topBarList {
+        float: right;
+        margin: 0 1em 0 0;
+        list-style-type: none;
+        position: relative;
+        top: 32%;
+        font-size: 1.2em;
+        li {
+            display: inline;
+        }
+        li a {
+            text-decoration: none;
+            color: white;
+        }
+    }
 }
 
-header{
-
-	width: 100%;
+header {
+    width: 100%;
     height: 22em;
     background: url("../images/backgroundImage-Small.jpg");
     background-position-x: -2em;
     z-index: 100;
-	h1{
-		display: none; 
-	    margin: auto;
-	    text-align: center;
-	    line-height: 7em;
-	    font-size: 2.5em;
-	}
+    h1 {
+        display: none;
+        margin: auto;
+        text-align: center;
+        line-height: 7em;
+        font-size: 2.5em;
+    }
 }
 
-section{
-
-	width: 100%;
-
-	h2{
-		text-align: center;
-	}
+section {
+    width: 100%;
+    h2 {
+        text-align: center;
+    }
 }
 
-.intro{
-
+.intro {
     height: 5em;
     background-color: #F8F300;
-
-	p{
-
-		margin: 0;
-		text-align: center;
-		line-height: 5em;
-
-	}
+    p {
+        margin: 0;
+        text-align: center;
+        line-height: 5em;
+    }
 }
 
-.playButton{
-	background-color: $tColor;
-	text-align: center;
-	button{
-    	margin: 2em auto;
-	}
+.playButton {
+    background-color: $tColor;
+    text-align: center;
+    button {
+        margin: 2em auto;
+    }
 }
 
-
-img{
-
-	width: 17em;
-	display: block;
-	margin: 0 auto;
+img {
+    width: 17em;
+    display: block;
+    margin: 0 auto;
 }
 
-.descriptionContainer{
-
-	background-color: $tColor;
+.descriptionContainer {
+    background-color: $tColor;
     height: 55em;
     width: 100%;
-
-    .centeredContainer{
-
-    	background-color: $tColor;
-	    width: 20em;
-	    height: 55em;
-	    margin: 0 auto;
-
-	    .retro,
-		.easyToPlay,
-		.addicting{
-
-			float: left;
-		}
-
-    }
-
-}
-
-@media screen and (min-width: 700px){
-
-	header{
-		background:url("../images/backgroundImage-Medium.jpg");
-		background-position-x: -2em;
-	}
-
-    .descriptionContainer{
-
-	   	background-color: $tColor;
-	    height: 37em;
-	    width: 100%;
-
-
-	    .centeredContainer{
-
-	    	background-color: $tColor;
-		    width: 43em;
-		    height: 36em;
-		    margin: 0 auto;
-
-		    .retro,
-			.easyToPlay,
-			.addicting{
-				float: left;
-			    width: 21em;
-			}
-
-			.addicting{
-				margin-top: -3.2em;
-			}
-
-	    }
-
+    .centeredContainer {
+        background-color: $tColor;
+        width: 20em;
+        height: 55em;
+        margin: 0 auto;
+        .retro,
+        .easyToPlay,
+        .addicting {
+            float: left;
+        }
     }
 }
 
-@media screen and (min-width: 1000px){
-
-	header{
-		background:url("../images/backgroundImage-Large.jpg");
-		background-position-x: -2em;
-	}
-
-    .descriptionContainer{
-
-	   	background-color: $tColor;
-	    height: 26em;
-	    width: 100%;
-
-
-	    .centeredContainer{
-
-	    	background-color: $tColor;
-		    width: 63em;
-		    height: 26em;
-		    margin: 0 auto;
-
-		    .retro,
-			.easyToPlay,
-			.addicting{
-				float: left;
-			    width: 21em;
-			}
-
-			.retro img{
-
-				margin-top: 4em;
-			}
-
-			.addicting img{
-
-				margin-top: 6em;
-			}
-
-			.addicting{
-			margin: 0;
-			}
-
-	    }
-
+@media screen and (min-width: 700px) {
+    header {
+        background: url("../images/backgroundImage-Medium.jpg");
+        background-position-x: -2em;
     }
-
+    .descriptionContainer {
+        background-color: $tColor;
+        height: 37em;
+        width: 100%;
+        .centeredContainer {
+            background-color: $tColor;
+            width: 43em;
+            height: 36em;
+            margin: 0 auto;
+            .retro,
+            .easyToPlay,
+            .addicting {
+                float: left;
+                width: 21em;
+            }
+            .addicting {
+                margin-top: -3.2em;
+            }
+        }
+    }
 }
 
+@media screen and (min-width: 1000px) {
+    header {
+        background: url("../images/backgroundImage-Large.jpg");
+        background-position-x: -2em;
+    }
+    .descriptionContainer {
+        background-color: $tColor;
+        height: 26em;
+        width: 100%;
+        .centeredContainer {
+            background-color: $tColor;
+            width: 63em;
+            height: 26em;
+            margin: 0 auto;
+            .retro,
+            .easyToPlay,
+            .addicting {
+                float: left;
+                width: 21em;
+            }
+            .retro img {
+                margin-top: 4em;
+            }
+            .addicting img {
+                margin-top: 6em;
+            }
+            .addicting {
+                margin: 0;
+            }
+        }
+    }
+}
 
-
-footer div{
+footer div {
     height: 4em;
     background-color: green;
     line-height: 5em;

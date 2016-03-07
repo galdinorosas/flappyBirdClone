@@ -12,74 +12,75 @@ var source = require('vinyl-source-stream');
 var buffer = require('vinyl-buffer');
 var sourcemaps = require('gulp-sourcemaps');
 var minifyCss = require('gulp-minify-css');
+var postcss = require('gulp-postcss');
+var autoprefixer = require('autoprefixer');
 
 // To run broswer sync (to make browser auto-update the browser to visually see changes instantly)
 // open a new tab in terminal and run this code: browser-sync start --server --files "css/*.css,index.html"
 
 
 gulp.task('jshint', function() {
-  return gulp.src('js/*.js')
-    .pipe(jshint())
-    .pipe(jshint.reporter('default'));
+    return gulp.src('js/*.js')
+        .pipe(jshint())
+        .pipe(jshint.reporter('default'));
 });
 
 gulp.task('minify-css', function() {
-  return gulp.src('css/*.css')
-    .pipe(minifyCss({compatibility: 'ie8'}))
-    .pipe(gulp.dest('build/css'));
+    return gulp.src('css/*.css')
+        .pipe(minifyCss({ compatibility: 'ie8' }))
+        .pipe(gulp.dest('public/css'));
 });
 
 
 // Compile Sass task
 gulp.task('sass', function() {
-  return gulp.src('scss/*.scss')
-    .pipe(sourcemaps.init())
-    .pipe(sass())
-    .pipe(sourcemaps.write('.'))
-    .pipe(gulp.dest('css'));
+    return gulp.src('scss/*.scss')
+        .pipe(sourcemaps.init())
+        .pipe(sass())
+        .pipe(sourcemaps.write('.'))
+        .pipe(gulp.dest('public/css'));
 });
 
 // Watch task
 gulp.task('watch', function() {
-  gulp.watch('js/*.js', ['jshint']);
-  gulp.watch('scss/*.scss', ['sass']);
+    gulp.watch('js/*.js', ['jshint']);
+    gulp.watch('scss/*.scss', ['sass']);
 });
 
 
 
 gulp.task('html', function() {
-  return gulp.src('index.html')
-    .pipe(minifyHTML())
-    .pipe(gulp.dest('build/'));
+    return gulp.src('index.html')
+        .pipe(minifyHTML())
+        .pipe(gulp.dest('public/'));
 });
 
 // JavaScript build task, removes whitespace and concatenates all files
 gulp.task('scripts', function() {
-  return browserify('js/main.js')
-    .bundle()
-    .pipe(source('app.js'))
-    .pipe(buffer())
-    .pipe(uglify())
-    .pipe(gulp.dest('build/js'));
+    return browserify('js/main.js')
+        .bundle()
+        .pipe(source('app.js'))
+        .pipe(buffer())
+        .pipe(uglify())
+        .pipe(gulp.dest('build/js'));
 });
 
 // Styles build task, concatenates all the files
 gulp.task('styles', function() {
-  return gulp.src('css/*.css')
-    .pipe(concat('styles.css'))
-    .pipe(gulp.dest('build/css'));
+    return gulp.src('css/*.css')
+        .pipe(concat('styles.css'))
+        .pipe(gulp.dest('build/css/'));
 });
 
 // Image optimization task
 gulp.task('images', function() {
-  return gulp.src('images/*')
-    .pipe(imagemin())
-    .pipe(gulp.dest('build/img'));
+    return gulp.src('images/*')
+        .pipe(imagemin())
+        .pipe(gulp.dest('build/img'));
 });
 
 // Build task
-gulp.task('build', ['jshint', 'sass', 'html', 'scripts', 'styles', 'images','minify-css']);
+gulp.task('build', ['jshint', 'sass', 'html', 'scripts', 'styles', 'images', 'minify-css']);
 
 // Default task
 gulp.task('default', ['jshint', 'sass', 'watch']);
-
